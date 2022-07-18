@@ -1,33 +1,34 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
-    const Links = [
+    const Links = [ 
         {
-          to: "/",
-          title: "HOME"
-        },
+            to: "/product",
+            title: "PRODUCTS"
+          },
         {
           to: "/about",
-          title: "About"
+          title: "ABOUT"
         },
         {
           to: "/contact",
           title: "CONTACT"
         },
+       
         {
-          to: "/product",
-          title: "PRODUCTS"
-        },
+            to: "/login",
+            title: "LOGIN"
+          },
         {
             to: "/cart",
           title: <FaShoppingCart/>
         }
       ];
       let activeStyle = {
-        color: "Black",
+        color: "#660708",
         textDecoration:"none"
       };
       let nonActiveStyle = {
@@ -37,7 +38,9 @@ const Navbar = () => {
   return (
     <div className='Navbar-box'>
         <div className='Navbar-childbox'>
-        <div className='Navbar-iconname'><h1>NIKE</h1></div>
+        <div className='Navbar-iconname'>
+           <Link style={{color:"black", textDecoration:"none"}} to="/"><h1>NIKE</h1></Link> 
+            </div>
         <div className='Navbar-links'> 
             {
                 Links.map((e) => (
